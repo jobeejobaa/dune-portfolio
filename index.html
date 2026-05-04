@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dune Carle Cros — Artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Bebas+Neue&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --off-white: #f5f0e8;
+    --cream: #ede8dd;
+    --gold: #c9a96e;
+    --gold-light: #e8d5aa;
+    --charcoal: #1a1a1a;
+    --mid: #5a5a5a;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--off-white);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1px solid rgba(201,169,110,0.5);
+    border-radius: 50%;
+    position: fixed;
+    top: 0; left: 0;
+    pointer-events: none;
+    z-index: 9998;
+    transition: transform 0.25s cubic-bezier(0.25,0.46,0.45,0.94), width 0.3s, height 0.3s, border-color 0.3s;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mix-blend-mode: difference;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 0.65rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+  .nav-links a:hover { opacity: 1; }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 70% 50%, rgba(201,169,110,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(201,169,110,0.05) 0%, transparent 50%),
+      var(--black);
+  }
+
+  /* Animated grain */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: -50%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+    animation: grain 0.5s steps(2) infinite;
+  }
+
+  @keyframes grain {
+    0% { transform: translate(0,0); }
+    20% { transform: translate(-2%,-3%); }
+    40% { transform: translate(3%,2%); }
+    60% { transform: translate(-1%,4%); }
+    80% { transform: translate(2%,-1%); }
+    100% { transform: translate(0,0); }
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(6rem, 15vw, 14rem);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: var(--off-white);
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.5s forwards;
+    position: relative;
+  }
+
+  .hero-title span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gold);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.8s forwards;
+  }
+
+  .hero-line {
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    margin: 3rem auto 0;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 1.1s forwards;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* MARQUEE */
+  .marquee-section {
+    overflow: hidden;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(201,169,110,0.2);
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+    background: var(--charcoal);
+  }
+
+  .marquee-track {
+    display: flex;
+    gap: 4rem;
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .marquee-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    flex-shrink: 0;
+  }
+
+  .marquee-dot {
+    color: var(--mid);
+    margin: 0 1rem;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    align-items: center;
+  }
+
+  .about-text {
+    padding: 8rem 6rem 8rem 8rem;
+  }
+
+  .section-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .about-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+    color: var(--off-white);
+  }
+
+  .about-heading em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .about-body {
+    font-size: 0.85rem;
+    line-height: 2;
+    color: rgba(245,240,232,0.65);
+    max-width: 480px;
+    margin-bottom: 3rem;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-top: 0.5rem;
+  }
+
+  .about-visual {
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    background: var(--charcoal);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .about-visual-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  /* SVG panther illustration */
+  .panther-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Artist photo (overlays SVG when present) */
+  .artist-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .artist-photo-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background:
+      radial-gradient(ellipse at center, transparent 50%, rgba(15,15,15,0.55) 100%),
+      linear-gradient(180deg, transparent 60%, rgba(15,15,15,0.4) 100%);
+    pointer-events: none;
+  }
+  .artist-photo-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 6px;
+    color: rgba(201,169,110,0.6);
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+
+  /* WORK GRID */
+  .work {
+    padding: 8rem 4rem;
+    background: var(--black);
+  }
+
+  .work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 5rem;
+  }
+
+  .work-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.9;
+    color: var(--off-white);
+  }
+
+  .work-title span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(201,169,110,0.5);
+  }
+
+  .work-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--gold);
+    max-width: 300px;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  /* Category tabs */
+  .work-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--mid);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    cursor: none;
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0; right: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .tab-btn.active { color: var(--gold); }
+  .tab-btn.active::after { transform: scaleX(1); }
+  .tab-btn:hover { color: var(--off-white); }
+
+  /* Masonry grid */
+  .grid-panel { display: none; }
+  .grid-panel.active { display: block; }
+
+  .masonry {
+    columns: 3;
+    column-gap: 1.5rem;
+  }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    cursor: none;
+  }
+
+  .masonry-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 1;
+  }
+
+  .masonry-item:hover::before { opacity: 1; }
+
+  .masonry-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+  }
+
+  .masonry-item:hover img { transform: scale(1.04); }
+
+  .item-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s;
+  }
+
+  .masonry-item:hover .item-caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .item-caption-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--off-white);
+  }
+
+  .item-caption-year {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    margin-top: 0.25rem;
+  }
+
+  /* CLIENTS SECTION */
+  .clients {
+    padding: 8rem 8rem;
+    background: var(--charcoal);
+    text-align: center;
+  }
+
+  .clients-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--off-white);
+    margin-bottom: 1rem;
+  }
+
+  .clients-sub {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 5rem;
+  }
+
+  .clients-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .client-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(201,169,110,0.3);
+    padding: 1rem 2.5rem;
+    transition: all 0.3s;
+    cursor: none;
+    letter-spacing: 0.05em;
+  }
+
+  .client-item:hover {
+    color: var(--gold);
+    -webkit-text-stroke: 0;
+  }
+
+  /* CONTACT */
+  .contact {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+
+  .contact-visual {
+    background: linear-gradient(135deg, var(--charcoal), var(--black));
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-visual-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18vw;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(201,169,110,0.15);
+    line-height: 1;
+    user-select: none;
+    position: absolute;
+    left: -2rem;
+    white-space: nowrap;
+  }
+
+  .contact-form-area {
+    padding: 8rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--off-white);
+    color: var(--black);
+  }
+
+  .contact-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .contact-label::before {
+    content: '';
+    width: 40px; height: 1px;
+    background: var(--gold);
+  }
+
+  .contact-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-heading em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .contact-info {
+    margin-bottom: 3rem;
+  }
+
+  .contact-info-line {
+    font-size: 0.8rem;
+    color: var(--mid);
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+
+  .contact-info-line a {
+    color: var(--black);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    transition: border-color 0.3s, color 0.3s;
+  }
+
+  .contact-info-line a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--black);
+    text-decoration: none;
+    padding: 1.2rem 2.5rem;
+    border: 1px solid var(--black);
+    transition: all 0.4s;
+    align-self: flex-start;
+    cursor: none;
+  }
+
+  .contact-cta:hover {
+    background: var(--black);
+    color: var(--gold);
+  }
+
+  .contact-cta svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.3s;
+  }
+
+  .contact-cta:hover svg { transform: translateX(4px); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    color: var(--off-white);
+    text-transform: uppercase;
+  }
+
+  .footer-copy {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    color: var(--mid);
+  }
+
+  .footer-instagram {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .footer-instagram:hover { opacity: 0.6; }
+
+  /* SCROLL indicator */
+  .scroll-indicator {
+    position: fixed;
+    right: 3rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 50;
+  }
+
+  .scroll-dot {
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: rgba(201,169,110,0.3);
+    transition: all 0.3s;
+    cursor: none;
+  }
+
+  .scroll-dot.active {
+    background: var(--gold);
+    height: 20px;
+    border-radius: 2px;
+  }
+
+  /* Gold ornament */
+  .ornament {
+    color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    opacity: 0.4;
+  }
+
+  /* Placeholder panels for images */
+  .img-placeholder {
+    background: var(--charcoal);
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: rgba(201,169,110,0.3);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  /* Reveal animation on scroll */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    nav { padding: 1.5rem 2rem; }
+    .nav-links { display: none; }
+    .about, .contact { grid-template-columns: 1fr; }
+    .about-text { padding: 5rem 2rem; }
+    .about-visual { min-height: 60vh; }
+    .work { padding: 5rem 1.5rem; }
+    .masonry { columns: 2; }
+    .contact-form-area { padding: 5rem 2rem; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; }
+    .clients { padding: 5rem 2rem; }
+    .scroll-indicator { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Navigation -->
+<nav>
+  <a href="#" class="nav-logo">Dune Cros</a>
+  <ul class="nav-links">
+    <li><a href="#work">Œuvres</a></li>
+    <li><a href="#about">Artiste</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Scroll indicator -->
+<div class="scroll-indicator">
+  <div class="scroll-dot active" data-section="0"></div>
+  <div class="scroll-dot" data-section="1"></div>
+  <div class="scroll-dot" data-section="2"></div>
+  <div class="scroll-dot" data-section="3"></div>
+  <div class="scroll-dot" data-section="4"></div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="section-0">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Portfolio Artistique &nbsp;·&nbsp; Paris &nbsp;·&nbsp; 2024</p>
+    <h1 class="hero-title">
+      Dune
+      <span>Cros</span>
+    </h1>
+    <p class="hero-subtitle">Peinture murale &nbsp;·&nbsp; Fresque &nbsp;·&nbsp; Art urbain</p>
+    <div class="hero-line"></div>
+  </div>
+
+  <!-- Animated gold lines in hero -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.12;" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+    <line x1="0" y1="450" x2="400" y2="450" stroke="#c9a96e" stroke-width="0.5" stroke-dasharray="4 12"/>
+    <line x1="1040" y1="450" x2="1440" y2="450" stroke="#c9a96e" stroke-width="0.5" stroke-dasharray="4 12"/>
+    <circle cx="720" cy="450" r="200" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-dasharray="3 9"/>
+    <circle cx="720" cy="450" r="300" stroke="#c9a96e" stroke-width="0.3" fill="none" stroke-dasharray="1 15"/>
+    <line x1="720" y1="0" x2="720" y2="250" stroke="#c9a96e" stroke-width="0.5" stroke-dasharray="4 12"/>
+    <line x1="720" y1="650" x2="720" y2="900" stroke="#c9a96e" stroke-width="0.5" stroke-dasharray="4 12"/>
+    <!-- corner ornaments -->
+    <path d="M 60 60 L 60 100 M 60 60 L 100 60" stroke="#c9a96e" stroke-width="0.8" fill="none"/>
+    <path d="M 1380 60 L 1380 100 M 1380 60 L 1340 60" stroke="#c9a96e" stroke-width="0.8" fill="none"/>
+    <path d="M 60 840 L 60 800 M 60 840 L 100 840" stroke="#c9a96e" stroke-width="0.8" fill="none"/>
+    <path d="M 1380 840 L 1380 800 M 1380 840 L 1340 840" stroke="#c9a96e" stroke-width="0.8" fill="none"/>
+  </svg>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item">Fresque Monumentale</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Vitrine de Luxe</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Déco Intérieure</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Peinture sur Verre</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Art Urbain</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Grand Seiko · Place Vendôme</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Fresque Monumentale</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Vitrine de Luxe</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Déco Intérieure</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Peinture sur Verre</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Art Urbain</span>
+    <span class="marquee-dot">✦</span>
+    <span class="marquee-item">Grand Seiko · Place Vendôme</span>
+    <span class="marquee-dot">✦</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about" data-section="1">
+  <div class="about-text">
+    <div class="section-label reveal">Biographie</div>
+    <h2 class="about-heading reveal">
+      L'art brut<br>
+      au service du<br>
+      <em>raffinement</em>
+    </h2>
+    <p class="about-body reveal">
+      Dune Carle Cros, 30 ans, est une artiste peintre engagée, passionnée par les arts urbains, le graffiti et l'expression contemporaine. Après une prépa artistique à la renommée Gerrit Rietveld Académie d'Amsterdam, elle poursuit des études en architecture d'intérieur, scénographie et direction artistique.
+    </p>
+    <p class="about-body reveal" style="margin-top: -1rem;">
+      À 15 ans, elle touche ses premières bombes de peinture et ne les lâchera plus. Aujourd'hui à son compte, elle s'épanouit dans la conception et la réalisation de projets d'envergure — des fresques monumentales aux vitrines de la Place Vendôme.
+    </p>
+    <div class="about-stats reveal">
+      <div>
+        <div class="stat-number">15+</div>
+        <div class="stat-label">Années d'expérience</div>
+      </div>
+      <div>
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Projets réalisés</div>
+      </div>
+      <div>
+        <div class="stat-number">6</div>
+        <div class="stat-label">Villes en France</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-visual">
+    <!-- Photo de l'artiste (placée dans portfolio/artiste.jpg). Si absente, le SVG ci-dessous reste visible en fallback. -->
+    <img src="portfolio/artiste.jpg"
+         alt="Dune Carle Cros, artiste muraliste"
+         class="artist-photo"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='none'; this.nextElementSibling.nextElementSibling.style.display='none';" />
+    <div class="artist-photo-overlay"></div>
+    <div class="artist-photo-caption">Dune Carle Cros</div>
+
+    <!-- Atmospheric SVG composition evoking the panther/leopard theme (fallback) -->
+    <svg viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+          <stop offset="0%" stop-color="#2a2a2a"/>
+          <stop offset="100%" stop-color="#0f0f0f"/>
+        </radialGradient>
+        <radialGradient id="spotGrad" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
+        </radialGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+      </defs>
+
+      <rect width="700" height="900" fill="url(#bgGrad)"/>
+      <rect width="700" height="900" fill="url(#spotGrad)"/>
+
+      <!-- Stylized panther silhouette - abstract shapes -->
+      <!-- Head -->
+      <ellipse cx="350" cy="270" rx="110" ry="95" fill="#111" stroke="rgba(201,169,110,0.15)" stroke-width="1"/>
+      <!-- Eyes -->
+      <ellipse cx="315" cy="255" rx="14" ry="10" fill="#c9a96e" opacity="0.9" filter="url(#glow)"/>
+      <ellipse cx="385" cy="255" rx="14" ry="10" fill="#c9a96e" opacity="0.9" filter="url(#glow)"/>
+      <ellipse cx="315" cy="256" rx="5" ry="8" fill="#0a0a0a"/>
+      <ellipse cx="385" cy="256" rx="5" ry="8" fill="#0a0a0a"/>
+      <!-- Nose -->
+      <path d="M 340 278 L 350 290 L 360 278 Z" fill="rgba(201,169,110,0.4)"/>
+      <!-- Whisker lines -->
+      <line x1="255" y1="282" x2="335" y2="285" stroke="rgba(201,169,110,0.3)" stroke-width="1" stroke-dasharray="3 5"/>
+      <line x1="365" y1="285" x2="445" y2="282" stroke="rgba(201,169,110,0.3)" stroke-width="1" stroke-dasharray="3 5"/>
+      <!-- Ears -->
+      <path d="M 255 200 L 280 245 L 310 215 Z" fill="#111" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
+      <path d="M 445 200 L 420 245 L 390 215 Z" fill="#111" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
+
+      <!-- Body suggestion -->
+      <ellipse cx="350" cy="500" rx="160" ry="180" fill="rgba(20,20,20,0.8)" stroke="rgba(201,169,110,0.08)" stroke-width="1"/>
+
+      <!-- Leopard spots on body -->
+      <g opacity="0.6">
+        <ellipse cx="290" cy="430" rx="18" ry="12" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1.5"/>
+        <ellipse cx="330" cy="460" rx="14" ry="10" fill="none" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
+        <ellipse cx="380" cy="440" rx="20" ry="13" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1.5"/>
+        <ellipse cx="420" cy="470" rx="16" ry="11" fill="none" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
+        <ellipse cx="310" cy="510" rx="17" ry="12" fill="none" stroke="rgba(201,169,110,0.35)" stroke-width="1.5"/>
+        <ellipse cx="360" cy="530" rx="22" ry="14" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1.5"/>
+        <ellipse cx="410" cy="515" rx="15" ry="10" fill="none" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
+      </g>
+
+      <!-- Tail -->
+      <path d="M 460 600 Q 540 620 560 700 Q 580 780 520 800" stroke="rgba(201,169,110,0.2)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+      <!-- Paws suggestion -->
+      <ellipse cx="270" cy="700" rx="45" ry="20" fill="rgba(20,20,20,0.9)" stroke="rgba(201,169,110,0.15)" stroke-width="1"/>
+      <ellipse cx="430" cy="700" rx="45" ry="20" fill="rgba(20,20,20,0.9)" stroke="rgba(201,169,110,0.15)" stroke-width="1"/>
+
+      <!-- Botanical elements -->
+      <g opacity="0.2" stroke="rgba(201,169,110,0.6)" fill="none" stroke-width="1">
+        <!-- Left branch -->
+        <path d="M 0 400 Q 80 350 120 300 Q 150 260 130 200"/>
+        <path d="M 80 360 Q 50 320 60 280"/>
+        <path d="M 100 330 Q 140 300 155 260"/>
+        <!-- Right branch -->
+        <path d="M 700 500 Q 620 450 580 380 Q 560 330 580 270"/>
+        <path d="M 640 460 Q 670 420 660 370"/>
+        <!-- Leaves suggestion -->
+        <ellipse cx="130" cy="200" rx="25" ry="12" transform="rotate(-30 130 200)"/>
+        <ellipse cx="580" cy="270" rx="25" ry="12" transform="rotate(20 580 270)"/>
+      </g>
+
+      <!-- Gold corner frame -->
+      <path d="M 30 30 L 30 90 M 30 30 L 90 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+      <path d="M 670 30 L 670 90 M 670 30 L 610 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+      <path d="M 30 870 L 30 810 M 30 870 L 90 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+      <path d="M 670 870 L 670 810 M 670 870 L 610 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+
+      <!-- Watermark-style text -->
+      <text x="350" y="870" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="rgba(201,169,110,0.3)" letter-spacing="6">DUNE CARLE CROS</text>
+    </svg>
+  </div>
+</section>
+
+<!-- WORK SECTION -->
+<section class="work" id="work" data-section="2">
+  <div class="work-header">
+    <div>
+      <h2 class="work-title reveal">
+        Œuvres
+        <span>Sélectionnées</span>
+      </h2>
+    </div>
+    <p class="work-intro reveal">
+      De la rue aux vitrines du luxe — un univers pictural unique
+    </p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="work-tabs reveal">
+    <button class="tab-btn active" onclick="switchTab(this, 'fresques')">Fresques</button>
+    <button class="tab-btn" onclick="switchTab(this, 'vitrines')">Vitrines</button>
+    <button class="tab-btn" onclick="switchTab(this, 'interieurs')">Intérieurs</button>
+    <button class="tab-btn" onclick="switchTab(this, 'toiles')">Toiles & Verre</button>
+  </div>
+
+  <!-- Fresques panel -->
+  <div class="grid-panel active" id="panel-fresques">
+    <div class="masonry">
+      <div class="masonry-item reveal">
+        <img src="portfolio/1.png" alt="Fresque Le Mur Boulogne 2024" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Le Mur Boulogne</div>
+          <div class="item-caption-year">2024</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/7.png" alt="Fresque Paris 13ème 2024" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Fresque Paris 13ème</div>
+          <div class="item-caption-year">2024</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/8.png" alt="Dessins" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Série Dessins</div>
+          <div class="item-caption-year">Urban Style</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/16.png" alt="Fresques Aulnay 2020" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Aulnay-sous-Bois</div>
+          <div class="item-caption-year">2020</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vitrines panel -->
+  <div class="grid-panel" id="panel-vitrines">
+    <div class="masonry">
+      <div class="masonry-item reveal">
+        <img src="portfolio/11.png" alt="Grand Seiko Place Vendôme 2022" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Grand Seiko — Place Vendôme</div>
+          <div class="item-caption-year">2022, Paris</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/14.png" alt="Grand Seiko 2024" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Grand Seiko — Hiver</div>
+          <div class="item-caption-year">2024, Paris</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/5.png" alt="Maison Frayssinet & Lepage" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Maison Frayssinet & Lepage</div>
+          <div class="item-caption-year">Montpellier · Nantes 2024</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/13.png" alt="Maison Prieur & Grand Seiko 2024" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Grand Seiko · Maison Prieur</div>
+          <div class="item-caption-year">Lille · Paris 2024</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/10.png" alt="Franck Provost & Guy Degrenne" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Franck Provost · Guy Degrenne</div>
+          <div class="item-caption-year">Paris · Lille 2023–24</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Intérieurs panel -->
+  <div class="grid-panel" id="panel-interieurs">
+    <div class="masonry">
+      <div class="masonry-item reveal">
+        <img src="portfolio/4.png" alt="Déco en intérieur Neuilly" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Bureaux — Neuilly-sur-Seine</div>
+          <div class="item-caption-year">2023</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/12.png" alt="Brasserie St Cloud & Coworking" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Brasserie · Espace Coworking</div>
+          <div class="item-caption-year">St Cloud · Paris 2022–23</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/15.png" alt="Studio & Bureau de création" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Studio Youtubeur · Bureau</div>
+          <div class="item-caption-year">Paris 2021</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toiles & Verre panel -->
+  <div class="grid-panel" id="panel-toiles">
+    <div class="masonry">
+      <div class="masonry-item reveal">
+        <img src="portfolio/6.png" alt="Peinture sur verre" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Peinture sur Verre</div>
+          <div class="item-caption-year">Série Fauves</div>
+        </div>
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/8.png" alt="Dessins" style="width:100%">
+        <div class="item-caption">
+          <div class="item-caption-title">Série Dessins au Fusain</div>
+          <div class="item-caption-year">Urban Wildlife</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients" id="clients" data-section="3">
+  <p class="clients-title reveal">Ils lui ont confié leurs espaces</p>
+  <p class="clients-sub reveal">Références — Maisons & Enseignes</p>
+  <div class="clients-list">
+    <div class="client-item reveal">Grand Seiko</div>
+    <div class="client-item reveal">Maison Frayssinet</div>
+    <div class="client-item reveal">Maison Lepage</div>
+    <div class="client-item reveal">Franck Provost</div>
+    <div class="client-item reveal">Guy Degrenne</div>
+    <div class="client-item reveal">Maison Prieur</div>
+    <div class="client-item reveal">Le Mur Boulogne</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" data-section="4">
+  <div class="contact-visual">
+    <div class="contact-visual-text">DUNE</div>
+    <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:0.08;" viewBox="0 0 600 800">
+      <circle cx="300" cy="400" r="280" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-dasharray="5 15"/>
+      <circle cx="300" cy="400" r="200" stroke="#c9a96e" stroke-width="0.5" fill="none" stroke-dasharray="2 10"/>
+    </svg>
+  </div>
+
+  <div class="contact-form-area">
+    <div class="contact-label reveal">Contact</div>
+    <h2 class="contact-heading reveal">
+      Un projet,<br>
+      une <em>vision</em> ?
+    </h2>
+    <div class="contact-info reveal">
+      <div class="contact-info-line">Dune Carle Cros</div>
+      <div class="contact-info-line">
+        <a href="tel:0675862621">06 75 86 26 21</a>
+      </div>
+      <div class="contact-info-line">
+        <a href="mailto:Dune.carle@outlook.fr">Dune.carle@outlook.fr</a>
+      </div>
+      <div class="contact-info-line" style="margin-top:1.5rem;">
+        <a href="https://www.instagram.com/dune_cros/" target="_blank">@dune_cros</a>
+      </div>
+    </div>
+    <a href="mailto:Dune.carle@outlook.fr" class="contact-cta reveal">
+      Prendre contact
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Dune Carle Cros</div>
+  <div class="footer-copy">© 2024 — Tous droits réservés</div>
+  <a href="https://www.instagram.com/dune_cros/" target="_blank" class="footer-instagram">Instagram ↗</a>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 4}px, ${my - 4}px)`;
+  });
+
+  // Smooth ring follow
+  function animateCursor() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) *.12;
+    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Hover expansion
+  document.querySelectorAll('a, button, .masonry-item, .client-item').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width = '56px';
+      ring.style.height = '56px';
+      ring.style.borderColor = 'rgba(201,169,110,0.9)';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.width = '36px';
+      ring.style.height = '36px';
+      ring.style.borderColor = 'rgba(201,169,110,0.5)';
+    });
+  });
+
+  // Tab switching
+  function switchTab(btn, panelId) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.grid-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + panelId).classList.add('active');
+    // Re-trigger reveals in new panel
+    document.querySelectorAll('#panel-' + panelId + ' .reveal').forEach((el, i) => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 80);
+    });
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Scroll indicator
+  const sections = document.querySelectorAll('[data-section]');
+  const dots = document.querySelectorAll('.scroll-dot');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const idx = entry.target.dataset.section;
+        dots.forEach(d => d.classList.remove('active'));
+        const dot = document.querySelector(`.scroll-dot[data-section="${idx}"]`);
+        if (dot) dot.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('[data-section]').forEach(s => sectionObserver.observe(s));
+</script>
+</body>
+</html>
