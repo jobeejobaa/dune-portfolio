@@ -192,20 +192,19 @@
 
   <!-- Tabs -->
   <div class="work-tabs reveal">
-    <button class="tab-btn active" onclick="switchTab(this, 'fresques')">Fresques</button>
-    <button class="tab-btn" onclick="switchTab(this, 'vitrines')">Vitrines</button>
-    <button class="tab-btn" onclick="switchTab(this, 'interieurs')">Intérieurs</button>
-    <button class="tab-btn" onclick="switchTab(this, 'toiles')">Toiles & Verre</button>
+    <button class="tab-btn active" onclick="switchTab(this, 'outdoors')">Outdoors</button>
+    <button class="tab-btn" onclick="switchTab(this, 'indoors')">Indoors</button>
+    <button class="tab-btn" onclick="switchTab(this, 'expositions')">Expositions, Festival & Evenements Artistiques</button>
   </div>
 
-  <!-- Fresques panel -->
-  <div class="grid-panel active" id="panel-fresques">
+  <!-- Outdoors panel : fresques murales + vitrines de boutiques (visibles depuis la rue) -->
+  <div class="grid-panel active" id="panel-outdoors">
     <div class="masonry">
       <div class="masonry-item reveal">
         <img src="portfolio/1.png" alt="Fresque Le Mur Boulogne 2024" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Le Mur Boulogne</div>
-          <div class="item-caption-year">2024</div>
+          <div class="item-caption-year">Fresque · 2024</div>
         </div>
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.1s">
@@ -215,72 +214,59 @@
           <div class="item-caption-year">2024</div>
         </div>
       </div>
-      <div class="masonry-item reveal" style="transition-delay:0.2s">
-        <img src="portfolio/8.png" alt="Dessins" style="width:100%">
-        <div class="item-caption">
-          <div class="item-caption-title">Série Dessins</div>
-          <div class="item-caption-year">Urban Style</div>
-        </div>
-      </div>
       <div class="masonry-item reveal" style="transition-delay:0.15s">
         <img src="portfolio/16.png" alt="Fresques Aulnay 2020" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Aulnay-sous-Bois</div>
-          <div class="item-caption-year">2020</div>
+          <div class="item-caption-year">Fresque · 2020</div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Vitrines panel -->
-  <div class="grid-panel" id="panel-vitrines">
-    <div class="masonry">
-      <div class="masonry-item reveal">
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
         <img src="portfolio/11.png" alt="Grand Seiko Place Vendôme 2022" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Grand Seiko — Place Vendôme</div>
-          <div class="item-caption-year">2022, Paris</div>
+          <div class="item-caption-year">Vitrine · 2022, Paris</div>
         </div>
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.1s">
         <img src="portfolio/14.png" alt="Grand Seiko 2024" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Grand Seiko — Hiver</div>
-          <div class="item-caption-year">2024, Paris</div>
+          <div class="item-caption-year">Vitrine · 2024, Paris</div>
         </div>
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.2s">
         <img src="portfolio/5.png" alt="Maison Frayssinet & Lepage" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Maison Frayssinet & Lepage</div>
-          <div class="item-caption-year">Montpellier · Nantes 2024</div>
+          <div class="item-caption-year">Vitrine · Montpellier · Nantes 2024</div>
         </div>
       </div>
-      <div class="masonry-item reveal" style="transition-delay:0.1s">
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
         <img src="portfolio/13.png" alt="Maison Prieur & Grand Seiko 2024" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Grand Seiko · Maison Prieur</div>
-          <div class="item-caption-year">Lille · Paris 2024</div>
+          <div class="item-caption-year">Vitrine · Lille · Paris 2024</div>
         </div>
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.2s">
         <img src="portfolio/10.png" alt="Franck Provost & Guy Degrenne" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Franck Provost · Guy Degrenne</div>
-          <div class="item-caption-year">Paris · Lille 2023–24</div>
+          <div class="item-caption-year">Vitrine · Paris · Lille 2023–24</div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Intérieurs panel -->
-  <div class="grid-panel" id="panel-interieurs">
+  <!-- Indoors panel : décoration intérieure (bureaux, brasserie, studio) -->
+  <div class="grid-panel" id="panel-indoors">
     <div class="masonry">
       <div class="masonry-item reveal">
         <img src="portfolio/4.png" alt="Déco en intérieur Neuilly" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Bureaux — Neuilly-sur-Seine</div>
-          <div class="item-caption-year">2023</div>
+          <div class="item-caption-year">Décoration intérieure · 2023</div>
         </div>
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.1s">
@@ -300,18 +286,18 @@
     </div>
   </div>
 
-  <!-- Toiles & Verre panel -->
-  <div class="grid-panel" id="panel-toiles">
+  <!-- Expositions, Festival & Événements panel : œuvres autonomes (toile, verre, dessins) -->
+  <div class="grid-panel" id="panel-expositions">
     <div class="masonry">
       <div class="masonry-item reveal">
         <img src="portfolio/6.png" alt="Peinture sur verre" style="width:100%">
         <div class="item-caption">
-          <div class="item-caption-title">Peinture sur Verre</div>
-          <div class="item-caption-year">Série Fauves</div>
+          <div class="item-caption-title">Peinture sur Verre — Série Fauves</div>
+          <div class="item-caption-year">Œuvre originale</div>
         </div>
       </div>
-      <div class="masonry-item reveal" style="transition-delay:0.15s">
-        <img src="portfolio/8.png" alt="Dessins" style="width:100%">
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/8.png" alt="Dessins au fusain" style="width:100%">
         <div class="item-caption">
           <div class="item-caption-title">Série Dessins au Fusain</div>
           <div class="item-caption-year">Urban Wildlife</div>
