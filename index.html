@@ -131,18 +131,18 @@
         <div class="stat-label">Années d'expérience</div>
       </div>
       <div>
-        <div class="stat-number">50+</div>
+        <div class="stat-number">100+</div>
         <div class="stat-label">Projets réalisés</div>
       </div>
       <div>
-        <div class="stat-number">6</div>
-        <div class="stat-label">Villes en France</div>
+        <div class="stat-number">Partout en Europe</div>
+        <div class="stat-label">Paris Londres Monaco Nice Lille Nantes Montpellier Lecce et autres</div>
       </div>
     </div>
   </div>
 
   <div class="about-visual">
-    <!-- Photo de l'artiste (placée dans portfolio/artiste.jpg). Si absente, le SVG ci-dessous reste visible en fallback. -->
+    <!-- Photo de l'artiste (placée dans portfolio/artiste.jpg). Si absente, le placeholder ci-dessous reste visible en fallback. -->
     <img src="portfolio/artiste.jpg"
          alt="Dune Carle Cros, artiste muraliste"
          class="artist-photo"
@@ -150,87 +150,29 @@
     <div class="artist-photo-overlay"></div>
     <div class="artist-photo-caption">Dune Carle Cros</div>
 
-    <!-- Atmospheric SVG composition evoking the panther/leopard theme (fallback) -->
-    <svg viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;inset:0;" preserveAspectRatio="xMidYMid slice">
-      <defs>
-        <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
-          <stop offset="0%" stop-color="#2a2a2a"/>
-          <stop offset="100%" stop-color="#0f0f0f"/>
-        </radialGradient>
-        <radialGradient id="spotGrad" cx="50%" cy="40%" r="60%">
-          <stop offset="0%" stop-color="#c9a96e" stop-opacity="0.12"/>
-          <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
-        </radialGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-        </filter>
-      </defs>
+    <!-- Placeholder "Photo en attente" (fallback élégant tant que la vraie photo n'est pas dispo) -->
+    <div class="photo-placeholder">
+      <svg class="photo-placeholder-frame" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#2a2a2a"/>
+            <stop offset="100%" stop-color="#0f0f0f"/>
+          </radialGradient>
+        </defs>
+        <rect width="700" height="900" fill="url(#bgGrad)"/>
+        <!-- Cadre doré aux 4 coins -->
+        <path d="M 30 30 L 30 90 M 30 30 L 90 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M 670 30 L 670 90 M 670 30 L 610 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M 30 870 L 30 810 M 30 870 L 90 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M 670 870 L 670 810 M 670 870 L 610 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+      </svg>
+      <div class="photo-placeholder-content">
+        <div class="photo-placeholder-mark">✦</div>
+        <div class="photo-placeholder-title">Photo en attente</div>
+        <div class="photo-placeholder-sub">Dune Carle Cros</div>
+      </div>
+    </div>
 
-      <rect width="700" height="900" fill="url(#bgGrad)"/>
-      <rect width="700" height="900" fill="url(#spotGrad)"/>
-
-      <!-- Stylized panther silhouette - abstract shapes -->
-      <!-- Head -->
-      <ellipse cx="350" cy="270" rx="110" ry="95" fill="#111" stroke="rgba(201,169,110,0.15)" stroke-width="1"/>
-      <!-- Eyes -->
-      <ellipse cx="315" cy="255" rx="14" ry="10" fill="#c9a96e" opacity="0.9" filter="url(#glow)"/>
-      <ellipse cx="385" cy="255" rx="14" ry="10" fill="#c9a96e" opacity="0.9" filter="url(#glow)"/>
-      <ellipse cx="315" cy="256" rx="5" ry="8" fill="#0a0a0a"/>
-      <ellipse cx="385" cy="256" rx="5" ry="8" fill="#0a0a0a"/>
-      <!-- Nose -->
-      <path d="M 340 278 L 350 290 L 360 278 Z" fill="rgba(201,169,110,0.4)"/>
-      <!-- Whisker lines -->
-      <line x1="255" y1="282" x2="335" y2="285" stroke="rgba(201,169,110,0.3)" stroke-width="1" stroke-dasharray="3 5"/>
-      <line x1="365" y1="285" x2="445" y2="282" stroke="rgba(201,169,110,0.3)" stroke-width="1" stroke-dasharray="3 5"/>
-      <!-- Ears -->
-      <path d="M 255 200 L 280 245 L 310 215 Z" fill="#111" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
-      <path d="M 445 200 L 420 245 L 390 215 Z" fill="#111" stroke="rgba(201,169,110,0.2)" stroke-width="1"/>
-
-      <!-- Body suggestion -->
-      <ellipse cx="350" cy="500" rx="160" ry="180" fill="rgba(20,20,20,0.8)" stroke="rgba(201,169,110,0.08)" stroke-width="1"/>
-
-      <!-- Leopard spots on body -->
-      <g opacity="0.6">
-        <ellipse cx="290" cy="430" rx="18" ry="12" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1.5"/>
-        <ellipse cx="330" cy="460" rx="14" ry="10" fill="none" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
-        <ellipse cx="380" cy="440" rx="20" ry="13" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1.5"/>
-        <ellipse cx="420" cy="470" rx="16" ry="11" fill="none" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
-        <ellipse cx="310" cy="510" rx="17" ry="12" fill="none" stroke="rgba(201,169,110,0.35)" stroke-width="1.5"/>
-        <ellipse cx="360" cy="530" rx="22" ry="14" fill="none" stroke="rgba(201,169,110,0.4)" stroke-width="1.5"/>
-        <ellipse cx="410" cy="515" rx="15" ry="10" fill="none" stroke="rgba(201,169,110,0.3)" stroke-width="1.5"/>
-      </g>
-
-      <!-- Tail -->
-      <path d="M 460 600 Q 540 620 560 700 Q 580 780 520 800" stroke="rgba(201,169,110,0.2)" stroke-width="3" fill="none" stroke-linecap="round"/>
-
-      <!-- Paws suggestion -->
-      <ellipse cx="270" cy="700" rx="45" ry="20" fill="rgba(20,20,20,0.9)" stroke="rgba(201,169,110,0.15)" stroke-width="1"/>
-      <ellipse cx="430" cy="700" rx="45" ry="20" fill="rgba(20,20,20,0.9)" stroke="rgba(201,169,110,0.15)" stroke-width="1"/>
-
-      <!-- Botanical elements -->
-      <g opacity="0.2" stroke="rgba(201,169,110,0.6)" fill="none" stroke-width="1">
-        <!-- Left branch -->
-        <path d="M 0 400 Q 80 350 120 300 Q 150 260 130 200"/>
-        <path d="M 80 360 Q 50 320 60 280"/>
-        <path d="M 100 330 Q 140 300 155 260"/>
-        <!-- Right branch -->
-        <path d="M 700 500 Q 620 450 580 380 Q 560 330 580 270"/>
-        <path d="M 640 460 Q 670 420 660 370"/>
-        <!-- Leaves suggestion -->
-        <ellipse cx="130" cy="200" rx="25" ry="12" transform="rotate(-30 130 200)"/>
-        <ellipse cx="580" cy="270" rx="25" ry="12" transform="rotate(20 580 270)"/>
-      </g>
-
-      <!-- Gold corner frame -->
-      <path d="M 30 30 L 30 90 M 30 30 L 90 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-      <path d="M 670 30 L 670 90 M 670 30 L 610 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-      <path d="M 30 870 L 30 810 M 30 870 L 90 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-      <path d="M 670 870 L 670 810 M 670 870 L 610 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-
-      <!-- Watermark-style text -->
-      <text x="350" y="870" text-anchor="middle" font-family="'Cormorant Garamond',serif" font-size="11" fill="rgba(201,169,110,0.3)" letter-spacing="6">DUNE CARLE CROS</text>
-    </svg>
   </div>
 </section>
 
@@ -244,7 +186,7 @@
       </h2>
     </div>
     <p class="work-intro reveal">
-      De la rue aux vitrines du luxe — un univers pictural unique
+      De la rue aux vitrines de grandes marques — un univers pictural unique
     </p>
   </div>
 
