@@ -72,3 +72,45 @@
   }, { threshold: 0.4 });
 
   document.querySelectorAll('[data-section]').forEach(s => sectionObserver.observe(s));
+
+  // Event modal — clic sur une vignette du panel Events
+  const modal = document.getElementById('eventModal');
+  const modalImg = document.getElementById('eventModalImg');
+  const modalTitle = document.getElementById('eventModalTitle');
+  const modalDate = document.getElementById('eventModalDate');
+  const modalText = document.getElementById('eventModalText');
+  const modalClose = document.getElementById('eventModalClose');
+
+  function openEventModal(item) {
+    const img = item.querySelector('img');
+    const title = item.querySelector('.item-overlay-title');
+    const date = item.querySelector('.item-overlay-date');
+    const text = item.querySelector('.item-overlay-text');
+    if (!img) return;
+    modalImg.src = img.src;
+    modalImg.alt = img.alt || '';
+    modalTitle.textContent = title ? title.textContent : '';
+    modalDate.textContent = date ? date.textContent : '';
+    modalText.textContent = text ? text.textContent : '';
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+
+  function closeEventModal() {
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('#panel-expositions .masonry-item').forEach(item => {
+    item.addEventListener('click', () => openEventModal(item));
+  });
+
+  modalClose.addEventListener('click', closeEventModal);
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeEventModal();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeEventModal();
+  });
