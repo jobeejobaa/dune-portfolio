@@ -493,10 +493,11 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.9) 0%, transparent 50%);
+    background: rgba(10,10,10,0.55);
     opacity: 0;
-    transition: opacity 0.4s;
+    transition: opacity 0.4s ease;
     z-index: 1;
+    pointer-events: none;
   }
 
   .masonry-item:hover::before { opacity: 1; }
@@ -504,38 +505,55 @@
   .masonry-item img {
     width: 100%;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
+    transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94),
+                filter 0.5s ease;
+    filter: grayscale(0) brightness(1);
   }
 
-  .masonry-item:hover img { transform: scale(1.04); }
+  .masonry-item:hover img {
+    transform: scale(1.02);
+    filter: grayscale(1) brightness(0.55);
+  }
 
-  .item-caption {
+  .item-overlay {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 1.5rem;
+    inset: 0;
     z-index: 2;
+    padding: 1.75rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
     opacity: 0;
-    transform: translateY(10px);
-    transition: all 0.4s;
+    transition: opacity 0.4s ease;
+    color: var(--off-white);
+    overflow: auto;
   }
 
-  .masonry-item:hover .item-caption {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .masonry-item:hover .item-overlay { opacity: 1; }
 
-  .item-caption-title {
+  .item-overlay-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 400;
     color: var(--off-white);
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
   }
 
-  .item-caption-year {
+  .item-overlay-date {
     font-size: 0.6rem;
     letter-spacing: 0.3em;
     color: var(--gold);
-    margin-top: 0.25rem;
+    text-transform: uppercase;
+    margin-bottom: 0.9rem;
+  }
+
+  .item-overlay-text {
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.88);
+    font-weight: 300;
   }
 
   /* CLIENTS SECTION */
