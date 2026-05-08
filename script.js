@@ -114,3 +114,36 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && modal.classList.contains('open')) closeEventModal();
   });
+
+  // Custom lightbox — clic sur une vignette du panel Deco & Custom (section Custom)
+  const lb = document.getElementById('customLightbox');
+  const lbImg = document.getElementById('customLightboxImg');
+  const lbClose = document.getElementById('customLightboxClose');
+
+  function openLightbox(src, alt) {
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+  }
+  function closeLightbox() {
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+  }
+
+  document.querySelectorAll('.custom-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const img = item.querySelector('img');
+      if (img) openLightbox(img.src, img.alt);
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e => {
+    if (e.target !== lbImg) closeLightbox();
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
+  });
