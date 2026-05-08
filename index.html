@@ -197,14 +197,16 @@
 
   <!-- Tabs -->
   <div class="work-tabs reveal">
-    <button class="tab-btn active" onclick="switchTab(this, 'outdoors')">Outdoors</button>
-    <button class="tab-btn" onclick="switchTab(this, 'indoors')">Indoors</button>
-    <button class="tab-btn" onclick="switchTab(this, 'expositions')">Expositions, Festival & Evenements Artistiques</button>
-        <button class="tab-btn" onclick="switchTab(this, 'deco')">Décoration & Customisation</button>
-  </div>
-
-  <!-- Outdoors panel : fresques murales + vitrines de boutiques (visibles depuis la rue) -->
-  <div class="grid-panel active" id="panel-outdoors">
+  <button class="tab-btn active" onclick="switchTab(this, 'indoor')">Indoor</button>
+  <button class="tab-btn" onclick="switchTab(this, 'outdoor')">Outdoor</button>
+  <button class="tab-btn" onclick="switchTab(this, 'vitrines')">Vitrines</button>
+  <button class="tab-btn" onclick="switchTab(this, 'deco')">Deco & Custom</button>
+  <button class="tab-btn" onclick="switchTab(this, 'expositions')">Expositions & Festival</button>
+  <button class="tab-btn" onclick="switchTab(this, 'atelier')">Atelier & Workshop</button>
+  <button class="tab-btn" onclick="switchTab(this, 'graffiti')">Graffiti</button>
+</div>
+  <!-- Outdoor panel : fresques murales + vitrines de boutiques (visibles depuis la rue) -->
+  <div class="grid-panel" id="panel-outdoor">
     <div class="masonry">
       <div class="masonry-item reveal">
         <img src="portfolio/1.png" alt="Fresque Le Mur Boulogne 2024" style="width:100%">
@@ -265,8 +267,8 @@
     </div>
   </div>
 
-  <!-- Indoors panel : décoration intérieure (bureaux, brasserie, studio) -->
-  <div class="grid-panel" id="panel-indoors">
+  <!-- Indoor panel : décoration intérieure (bureaux, brasserie, studio) -->
+  <div class="grid-panel active" id="panel-indoor">
     <div class="masonry">
       <div class="masonry-item reveal">
         <img src="portfolio/4.png" alt="Déco en intérieur Neuilly" style="width:100%">
@@ -359,6 +361,34 @@
         </div>
       </div>
 
+    </div>
+  </div>
+
+  <!-- Vitrines panel : devantures de boutiques, peintures sur vitre -->
+  <div class="grid-panel" id="panel-vitrines">
+    <div class="masonry">
+      <!-- TODO: ajouter les masonry-item Vitrines ici -->
+    </div>
+  </div>
+
+  <!-- Deco & Custom panel : déco sur objets, mobilier, customisation -->
+  <div class="grid-panel" id="panel-deco">
+    <div class="masonry">
+      <!-- TODO: ajouter les masonry-item Deco & Custom ici -->
+    </div>
+  </div>
+
+  <!-- Atelier & Workshop panel : ateliers d'initiation, workshops graffiti -->
+  <div class="grid-panel" id="panel-atelier">
+    <div class="masonry">
+      <!-- TODO: ajouter les masonry-item Atelier & Workshop ici -->
+    </div>
+  </div>
+
+  <!-- Graffiti panel : graffitis pure, lettrages, bombes -->
+  <div class="grid-panel" id="panel-graffiti">
+    <div class="masonry">
+      <!-- TODO: ajouter les masonry-item Graffiti ici -->
     </div>
   </div>
 </section>

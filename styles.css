@@ -439,6 +439,7 @@
   /* Category tabs */
   .work-tabs {
     display: flex;
+    flex-wrap: wrap;
     gap: 0;
     margin-bottom: 3rem;
     border-bottom: 1px solid rgba(201,169,110,0.15);
@@ -472,6 +473,19 @@
   .tab-btn.active { color: var(--gold); }
   .tab-btn.active::after { transform: scaleX(1); }
   .tab-btn:hover { color: var(--off-white); }
+
+  /* Tabs : wrap propre sur mobile */
+  @media (max-width: 768px) {
+    .work-tabs {
+      justify-content: center;
+      gap: 0.25rem 0.5rem;
+    }
+    .tab-btn {
+      padding: 0.75rem 1rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+    }
+  }
 
   /* Masonry grid */
   .grid-panel { display: none; }
