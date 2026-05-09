@@ -476,6 +476,31 @@
 
   /* Tabs : wrap propre sur mobile */
   @media (max-width: 768px) {
+    /* Section padding plus serré */
+    .work {
+      padding: 5rem 1.25rem;
+    }
+
+    /* Header : titre + tagline empilés en colonne */
+    .work-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .work-title {
+      font-size: clamp(2.5rem, 13vw, 4.5rem);
+    }
+
+    .work-intro {
+      max-width: 100%;
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    /* Tabs */
     .work-tabs {
       justify-content: center;
       gap: 0.25rem 0.5rem;
