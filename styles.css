@@ -980,8 +980,10 @@
     background: var(--black);
     padding: 3rem 6rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     border-top: 1px solid rgba(201,169,110,0.1);
   }
 
@@ -1009,6 +1011,29 @@
   }
 
   .footer-instagram:hover { opacity: 0.6; }
+
+  .footer-credit {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(201,169,110,0.15);
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--off-white);
+  }
+  .footer-credit a {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+  }
+  .footer-credit a:hover { opacity: 0.7; }
+  .footer-credit-sep {
+    margin: 0 0.8rem;
+    color: var(--mid);
+  }
 
   /* SCROLL indicator */
   .scroll-indicator {
