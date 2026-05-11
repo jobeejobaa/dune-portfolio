@@ -197,79 +197,202 @@
 
   <!-- Tabs -->
   <div class="work-tabs reveal">
-  <button class="tab-btn active" onclick="switchTab(this, 'indoor')">Indoor</button>
-  <button class="tab-btn" onclick="switchTab(this, 'outdoor')">Outdoor</button>
+  <button class="tab-btn active" onclick="switchTab(this, 'murs')">Murs & Fresques</button>
   <button class="tab-btn" onclick="switchTab(this, 'vitrines')">Vitrines</button>
+  <button class="tab-btn" onclick="switchTab(this, 'oeuvres')">Œuvres</button>
   <button class="tab-btn" onclick="switchTab(this, 'deco')">Deco & Custom</button>
   <button class="tab-btn" onclick="switchTab(this, 'expositions')">Expositions & Festival</button>
   <button class="tab-btn" onclick="switchTab(this, 'atelier')">Atelier & Workshop</button>
   <button class="tab-btn" onclick="switchTab(this, 'graffiti')">Graffiti</button>
 </div>
-  <!-- Outdoor panel : fresques murales + vitrines de boutiques (visibles depuis la rue) -->
-  <div class="grid-panel" id="panel-outdoor">
-    <div class="masonry">
+  <!-- Murs & Fresques panel : regroupe Outdoor (fresques murales / extérieur) et Indoor (déco intérieure) -->
+  <div class="grid-panel active" id="panel-murs">
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Outdoor</h3>
+      <div class="masonry">
       <div class="masonry-item reveal">
-        <img src="portfolio/1.png" alt="Fresque Le Mur Boulogne 2024" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Le Mur Boulogne</div>
-          <div class="item-overlay-date">Fresque · 2024</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/1/1_1.jpeg" alt="Outdoor — projet 1 (1_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/1/1_2.jpeg" alt="Outdoor — projet 1 (1_2)" style="width:100%">
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.1s">
-        <img src="portfolio/7.png" alt="Fresque Paris 13ème 2024" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Fresque Paris 13ème</div>
-          <div class="item-overlay-date">2024</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/1/1_3.jpeg" alt="Outdoor — projet 1 (1_3)" style="width:100%">
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.15s">
-        <img src="portfolio/16.png" alt="Fresques Aulnay 2020" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Aulnay-sous-Bois</div>
-          <div class="item-overlay-date">Fresque · 2020</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/1/1_4.jpeg" alt="Outdoor — projet 1 (1_4)" style="width:100%">
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.2s">
-        <img src="portfolio/11.png" alt="Grand Seiko Place Vendôme 2022" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Grand Seiko — Place Vendôme</div>
-          <div class="item-overlay-date">Vitrine · 2022, Paris</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/2/2_1.jpeg" alt="Outdoor — projet 2 (2_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/3/3_1.jpeg" alt="Outdoor — projet 3 (3_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/3/3_2.jpeg" alt="Outdoor — projet 3 (3_2)" style="width:100%">
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.1s">
-        <img src="portfolio/14.png" alt="Grand Seiko 2024" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Grand Seiko — Hiver</div>
-          <div class="item-overlay-date">Vitrine · 2024, Paris</div>
-        </div>
-      </div>
-      <div class="masonry-item reveal" style="transition-delay:0.2s">
-        <img src="portfolio/5.png" alt="Maison Frayssinet & Lepage" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Maison Frayssinet & Lepage</div>
-          <div class="item-overlay-date">Vitrine · Montpellier · Nantes 2024</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/3/3_3.jpeg" alt="Outdoor — projet 3 (3_3)" style="width:100%">
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.15s">
-        <img src="portfolio/13.png" alt="Maison Prieur & Grand Seiko 2024" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Grand Seiko · Maison Prieur</div>
-          <div class="item-overlay-date">Vitrine · Lille · Paris 2024</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/4/4_1.jpeg" alt="Outdoor — projet 4 (4_1)" style="width:100%">
       </div>
       <div class="masonry-item reveal" style="transition-delay:0.2s">
-        <img src="portfolio/10.png" alt="Franck Provost & Guy Degrenne" style="width:100%">
-        <div class="item-overlay">
-          <div class="item-overlay-title">Franck Provost · Guy Degrenne</div>
-          <div class="item-overlay-date">Vitrine · Paris · Lille 2023–24</div>
-        </div>
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/5/5_1.jpeg" alt="Outdoor — projet 5 (5_1)" style="width:100%">
       </div>
-    </div>
-  </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/5/5_2.jpeg" alt="Outdoor — projet 5 (5_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/5/5_3.jpeg" alt="Outdoor — projet 5 (5_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/5/5_4.jpeg" alt="Outdoor — projet 5 (5_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/5/5_5.jpeg" alt="Outdoor — projet 5 (5_5)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/5/5_6.jpeg" alt="Outdoor — projet 5 (5_6)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/6/6_1.jpeg" alt="Outdoor — projet 6 (6_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/6/6_2.jpeg" alt="Outdoor — projet 6 (6_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/6/6_3.jpeg" alt="Outdoor — projet 6 (6_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/6/6_4.jpeg" alt="Outdoor — projet 6 (6_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/7/7_1.jpeg" alt="Outdoor — projet 7 (7_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/7/7_2.jpeg" alt="Outdoor — projet 7 (7_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/7/7_3.jpeg" alt="Outdoor — projet 7 (7_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/7/7_4.jpeg" alt="Outdoor — projet 7 (7_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/8/8_1.jpeg" alt="Outdoor — projet 8 (8_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/9/9_1.jpeg" alt="Outdoor — projet 9 (9_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/9/9_2.jpeg" alt="Outdoor — projet 9 (9_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/9/9_3.jpeg" alt="Outdoor — projet 9 (9_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/10/10_1.jpeg" alt="Outdoor — projet 10 (10_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/10/10_2.jpeg" alt="Outdoor — projet 10 (10_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/10/10_3.jpeg" alt="Outdoor — projet 10 (10_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/10/10_4.jpeg" alt="Outdoor — projet 10 (10_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/10/10_5.jpeg" alt="Outdoor — projet 10 (10_5)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/11/11_1.jpeg" alt="Outdoor — projet 11 (11_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/11/11_2.jpeg" alt="Outdoor — projet 11 (11_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/12/12_1.jpeg" alt="Outdoor — projet 12 (12_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/12/12_2.jpeg" alt="Outdoor — projet 12 (12_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/12/12_3.jpeg" alt="Outdoor — projet 12 (12_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/12/12_4.jpeg" alt="Outdoor — projet 12 (12_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/13/13_1.jpeg" alt="Outdoor — projet 13 (13_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/13/13_2.jpeg" alt="Outdoor — projet 13 (13_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/13/13_3.jpeg" alt="Outdoor — projet 13 (13_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/13/13_4.jpeg" alt="Outdoor — projet 13 (13_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/13/13_5.jpeg" alt="Outdoor — projet 13 (13_5)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/14/14_1.jpeg" alt="Outdoor — projet 14 (14_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/14/14_2.jpeg" alt="Outdoor — projet 14 (14_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/15/15_1.jpeg" alt="Outdoor — projet 15 (15_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/15/15_2.jpeg" alt="Outdoor — projet 15 (15_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/15/15_3.jpeg" alt="Outdoor — projet 15 (15_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_1.jpeg" alt="Outdoor — projet 16 (16_1)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_2.jpeg" alt="Outdoor — projet 16 (16_2)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_3.jpeg" alt="Outdoor — projet 16 (16_3)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_4.jpeg" alt="Outdoor — projet 16 (16_4)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_5.jpeg" alt="Outdoor — projet 16 (16_5)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_6.jpeg" alt="Outdoor — projet 16 (16_6)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.2s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_7.jpeg" alt="Outdoor — projet 16 (16_7)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_8.jpeg" alt="Outdoor — projet 16 (16_8)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.05s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_9.jpeg" alt="Outdoor — projet 16 (16_9)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.1s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_10.jpeg" alt="Outdoor — projet 16 (16_10)" style="width:100%">
+      </div>
+      <div class="masonry-item reveal" style="transition-delay:0.15s">
+        <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_11.jpeg" alt="Outdoor — projet 16 (16_11)" style="width:100%">
+      </div>
+      </div>
+    </section>
 
-  <!-- Indoor panel : décoration intérieure (bureaux, brasserie, studio) -->
-  <div class="grid-panel active" id="panel-indoor">
-    <div class="masonry">
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Indoor</h3>
+      <div class="masonry">
       <div class="masonry-item reveal">
         <img src="portfolio/4.png" alt="Déco en intérieur Neuilly" style="width:100%">
         <div class="item-overlay">
@@ -291,8 +414,10 @@
           <div class="item-overlay-date">Paris 2021</div>
         </div>
       </div>
-    </div>
+      </div>
+    </section>
   </div>
+  <!-- fin panel-murs -->
 
   <!-- Expositions, Festival & Événements panel -->
   <div class="grid-panel" id="panel-expositions">
@@ -752,6 +877,13 @@
     </section>
   </div>
 
+  <!-- Œuvres panel : tableaux, toiles, œuvres autonomes -->
+  <div class="grid-panel" id="panel-oeuvres">
+    <div class="masonry">
+      <!-- TODO : ajouter ici les œuvres (format identique aux autres masonry-item) -->
+    </div>
+  </div>
+
   <!-- Deco & Custom panel : déco sur objets, mobilier, customisation -->
   <div class="grid-panel" id="panel-deco">
     <div class="masonry">
@@ -886,6 +1018,7 @@
 <div class="lightbox" id="customLightbox" aria-hidden="true" role="dialog">
   <button class="lightbox-close" id="customLightboxClose" aria-label="Fermer">×</button>
   <img class="lightbox-img" id="customLightboxImg" src="" alt="">
+  <video class="lightbox-video" id="customLightboxVideo" autoplay muted loop playsinline></video>
 </div>
 
 <script src="script.js"></script>

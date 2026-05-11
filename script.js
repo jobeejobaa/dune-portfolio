@@ -115,22 +115,42 @@
     if (e.key === 'Escape' && modal.classList.contains('open')) closeEventModal();
   });
 
-  // Custom lightbox — clic sur une vignette du panel Deco & Custom (section Custom)
+  // Custom lightbox — clic sur une vignette (image OU vidéo)
   const lb = document.getElementById('customLightbox');
   const lbImg = document.getElementById('customLightboxImg');
+  const lbVid = document.getElementById('customLightboxVideo');
   const lbClose = document.getElementById('customLightboxClose');
 
   function openLightbox(src, alt) {
+    lb.classList.remove('lightbox--video');
     lbImg.src = src;
     lbImg.alt = alt || '';
     lb.classList.add('open');
     lb.setAttribute('aria-hidden', 'false');
     document.body.classList.add('modal-open');
   }
+  function openLightboxVideo(src) {
+    lb.classList.add('lightbox--video');
+    lbVid.src = src;
+    lbVid.muted = true;
+    lbVid.loop = true;
+    lbVid.autoplay = true;
+    lbVid.playsInline = true;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+    // Lancer la lecture (certains navigateurs exigent un appel explicite)
+    lbVid.play().catch(() => {});
+  }
   function closeLightbox() {
     lb.classList.remove('open');
     lb.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('modal-open');
+    // Stoppe la vidéo proprement
+    lbVid.pause();
+    lbVid.removeAttribute('src');
+    lbVid.load();
+    lb.classList.remove('lightbox--video');
   }
 
   document.querySelectorAll('.custom-item').forEach(item => {
@@ -140,9 +160,22 @@
     });
   });
 
+  // Lightbox pour les photos ET vidéos des panels Murs & Fresques et Vitrines
+  document.querySelectorAll('#panel-murs .masonry-item, #panel-vitrines .masonry-item').forEach(item => {
+    const img = item.querySelector('img');
+    const vid = item.querySelector('video');
+    if (!img && !vid) return;
+    item.addEventListener('click', () => {
+      if (vid) openLightboxVideo(vid.currentSrc || vid.src);
+      else openLightbox(img.src, img.alt);
+    });
+    item.style.cursor = 'zoom-in';
+  });
+
   lbClose.addEventListener('click', closeLightbox);
   lb.addEventListener('click', e => {
-    if (e.target !== lbImg) closeLightbox();
+    // On ferme seulement si le clic vise le fond (pas l'image, ni la vidéo, ni la croix)
+    if (e.target !== lbImg && e.target !== lbVid && e.target !== lbClose) closeLightbox();
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();

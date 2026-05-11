@@ -631,6 +631,21 @@
     cursor: default;
   }
   .lightbox.open .lightbox-img { transform: scale(1); }
+
+  .lightbox-video {
+    max-width: 95vw;
+    max-height: 92vh;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    transform: scale(0.96);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: none; /* affiché en JS quand c'est une vidéo */
+    background: #000;
+  }
+  .lightbox.open .lightbox-video { transform: scale(1); }
+  .lightbox.lightbox--video .lightbox-img { display: none; }
+  .lightbox.lightbox--video .lightbox-video { display: block; }
+
   .lightbox-close {
     position: absolute;
     top: 1.5rem;
