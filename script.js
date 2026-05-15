@@ -180,3 +180,60 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
   });
+
+  // ---------- Auto-hide des sections vides ----------
+  // 1) On masque les .masonry-item dont l'image/vidéo ne charge pas (404)
+  // 2) Si une .vitrine-section n'a plus aucun item visible, on la masque (titre + grille)
+  // Conséquence : ajoute des fichiers au bon chemin → ça réapparaît tout seul.
+  function refreshEmptySections() {
+    // 1) Masquer chaque section sans item visible
+    document.querySelectorAll('.vitrine-section').forEach(section => {
+      const visibleItems = section.querySelectorAll('.masonry-item:not([hidden])');
+      section.hidden = visibleItems.length === 0;
+    });
+
+    // 2) Masquer chaque bouton d'onglet dont le panel n'a plus aucune section visible
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      // Récupère le suffixe du panel ciblé par switchTab(this, 'xxx')
+      const match = btn.getAttribute('onclick')?.match(/switchTab\(this,\s*'([^']+)'\)/);
+      if (!match) return;
+      const panel = document.getElementById('panel-' + match[1]);
+      if (!panel) return;
+
+      // Le panel a-t-il encore au moins une section visible OU un item visible ?
+      const hasVisibleSection = panel.querySelector('.vitrine-section:not([hidden]), .masonry-item:not([hidden])');
+      btn.hidden = !hasVisibleSection;
+
+      // Si le bouton actif disparaît, on bascule sur le premier visible
+      if (btn.hidden && btn.classList.contains('active')) {
+        btn.classList.remove('active');
+        panel.classList.remove('active');
+        const firstVisibleBtn = document.querySelector('.tab-btn:not([hidden])');
+        if (firstVisibleBtn) firstVisibleBtn.click();
+      }
+    });
+  }
+
+  document.querySelectorAll('.masonry-item').forEach(item => {
+    const media = item.querySelector('img, video');
+    if (!media) { item.hidden = true; return; }
+
+    const markBroken = () => { item.hidden = true; refreshEmptySections(); };
+
+    if (media.tagName === 'IMG') {
+      // Image déjà chargée OU déjà cassée ?
+      if (media.complete) {
+        if (media.naturalWidth === 0) markBroken();
+      } else {
+        media.addEventListener('error', markBroken);
+        media.addEventListener('load', () => {
+          if (media.naturalWidth === 0) markBroken();
+        });
+      }
+    } else {
+      media.addEventListener('error', markBroken);
+    }
+  });
+
+  // Premier passage (utile si toutes les images sont en cache)
+  refreshEmptySections();
