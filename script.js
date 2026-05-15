@@ -186,26 +186,10 @@
   // 2) Si une .vitrine-section n'a plus aucun item visible, on la masque (titre + grille)
   // Conséquence : ajoute des fichiers au bon chemin → ça réapparaît tout seul.
   function refreshEmptySections() {
-    // 1a) Masquer chaque .vitrine-section sans item visible
+    // 1) Masquer chaque .vitrine-section sans item visible
     document.querySelectorAll('.vitrine-section').forEach(section => {
       const visibleItems = section.querySelectorAll('.masonry-item:not([hidden])');
       section.hidden = visibleItems.length === 0;
-    });
-
-    // 1b) Masquer les h3 "orphelins" (titres dans .masonry sans wrapper section)
-    // Pour chaque h3, on regarde ses frères suivants jusqu'au prochain h3.
-    // Si aucun .masonry-item visible dans cette tranche → on cache le h3.
-    document.querySelectorAll('.masonry > .masonry-section-title').forEach(h3 => {
-      let sibling = h3.nextElementSibling;
-      let hasVisibleItem = false;
-      while (sibling && !sibling.classList.contains('masonry-section-title')) {
-        if (sibling.classList.contains('masonry-item') && !sibling.hidden) {
-          hasVisibleItem = true;
-          break;
-        }
-        sibling = sibling.nextElementSibling;
-      }
-      h3.hidden = !hasVisibleItem;
     });
 
     // 2) Masquer chaque bouton d'onglet dont le panel n'a plus aucune section visible
