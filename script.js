@@ -181,6 +181,25 @@
     if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
   });
 
+  // ---------- Burger menu (mobile) ----------
+  const burger = document.querySelector('.nav-burger');
+  if (burger) {
+    const closeNav = () => {
+      document.body.classList.remove('nav-open');
+      burger.setAttribute('aria-expanded', 'false');
+    };
+    burger.addEventListener('click', () => {
+      const isOpen = document.body.classList.toggle('nav-open');
+      burger.setAttribute('aria-expanded', String(isOpen));
+    });
+    // Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', closeNav));
+    // Fermer avec Échap
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && document.body.classList.contains('nav-open')) closeNav();
+    });
+  }
+
   // ---------- Accordion sur les sous-sections ----------
   // Clic sur un h3 → toggle .is-open sur la <section.vitrine-section> parente.
   // Plusieurs sections peuvent être ouvertes simultanément.
