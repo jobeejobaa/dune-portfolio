@@ -65,8 +65,9 @@
   }
   .nav-links {
     display: flex;
-    gap: 3rem;
+    gap: 1.75rem;
     list-style: none;
+    align-items: center;
   }
   .nav-links a {
     font-size: 0.65rem;
@@ -78,6 +79,10 @@
     transition: opacity 0.3s;
   }
   .nav-links a:hover { opacity: 1; }
+  .nav-instagram {
+    display: inline-flex;
+    align-items: center;
+  }
 
   /* HERO */
   .hero {
