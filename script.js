@@ -181,6 +181,20 @@
     if (e.key === 'Escape' && lb.classList.contains('open')) closeLightbox();
   });
 
+  // ---------- Accordion sur les sous-sections ----------
+  // Clic sur un h3 → toggle .is-open sur la <section.vitrine-section> parente.
+  // Plusieurs sections peuvent être ouvertes simultanément.
+  document.querySelectorAll('.vitrine-section .masonry-section-title').forEach(h3 => {
+    h3.setAttribute('role', 'button');
+    h3.setAttribute('tabindex', '0');
+    const section = h3.closest('.vitrine-section');
+    const toggle = () => section.classList.toggle('is-open');
+    h3.addEventListener('click', toggle);
+    h3.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
   // ---------- Auto-hide des sections vides ----------
   // 1) On masque les .masonry-item dont l'image/vidéo ne charge pas (404)
   // 2) Si une .vitrine-section n'a plus aucun item visible, on la masque (titre + grille)

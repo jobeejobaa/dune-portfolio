@@ -1127,3 +1127,35 @@
     .clients { padding: 5rem 2rem; }
     .scroll-indicator { display: none; }
   }
+
+  /* ===== Accordion sur les sous-sections (vitrine-section) =====
+     Le h3 devient cliquable, la grille .masonry est cachée par défaut.
+     On ajoute la classe .is-open sur la <section> pour ouvrir. */
+  .vitrine-section .masonry-section-title {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    transition: opacity 0.2s ease;
+  }
+  .vitrine-section .masonry-section-title:hover {
+    opacity: 0.75;
+  }
+  .vitrine-section .masonry-section-title::before {
+    content: '▸';
+    display: inline-block;
+    font-size: 0.7em;
+    opacity: 0.6;
+    transition: transform 0.25s ease;
+  }
+  .vitrine-section.is-open .masonry-section-title::before {
+    transform: rotate(90deg);
+  }
+  .vitrine-section .masonry {
+    display: none;
+  }
+  .vitrine-section.is-open .masonry {
+    display: block;
+  }
