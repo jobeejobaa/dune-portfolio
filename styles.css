@@ -1184,8 +1184,9 @@
     .masonry { columns: 2; }
     .contact-form-area { padding: 5rem 2rem; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem; }
-    .footer-credit { letter-spacing: 0.15em; font-size: 0.7rem; word-break: break-word; }
-    .footer-credit a { word-break: break-all; }
+    .footer-credit { letter-spacing: 0.1em; font-size: 0.65rem; }
+    .footer-credit-email-group { white-space: nowrap; }
+    .footer-credit-sep { margin: 0 0.4rem; }
     .contact-visual-text { display: none; }
     .clients { padding: 5rem 2rem; }
     .scroll-indicator { display: none; }
