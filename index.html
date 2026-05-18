@@ -218,7 +218,6 @@
   <button class="tab-btn" onclick="switchTab(this, 'deco')">Deco & Custom</button>
   <button class="tab-btn" onclick="switchTab(this, 'expositions')">Expositions & Festival</button>
   <button class="tab-btn" onclick="switchTab(this, 'atelier')">Atelier & Workshop</button>
-  <button class="tab-btn" onclick="switchTab(this, 'graffiti')">Graffiti</button>
 </div>
   <!-- Murs & Fresques panel : fresques murales / extérieur (Outdoor) -->
   <div class="grid-panel active" id="panel-murs">
@@ -402,6 +401,12 @@
       <div class="masonry-item reveal" style="transition-delay:0.15s">
         <img src="portfolio/MURS%26FRESQUES/OUTDOOR/16/16_11.jpeg" alt="Outdoor — projet 16 (16_11)" style="width:100%">
       </div>
+      </div>
+
+      <!-- Sous-section Graffiti : cachée tant que vide. Retirer les style="display:none" quand on ajoute des images. -->
+      <h4 class="masonry-section-subtitle" style="display:none;">Graffiti</h4>
+      <div class="masonry" style="display:none;">
+        <!-- TODO: ajouter les masonry-item Graffiti ici -->
       </div>
     </section>
 
@@ -1184,12 +1189,6 @@
 
   </div>
 
-  <!-- Graffiti panel : graffitis pure, lettrages, bombes -->
-  <div class="grid-panel" id="panel-graffiti">
-    <div class="masonry">
-      <!-- TODO: ajouter les masonry-item Graffiti ici -->
-    </div>
-  </div>
 </section>
 
 <!-- CLIENTS -->
