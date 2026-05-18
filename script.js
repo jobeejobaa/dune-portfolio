@@ -160,8 +160,8 @@
     });
   });
 
-  // Lightbox pour les photos ET vidéos des panels Murs & Fresques et Vitrines
-  document.querySelectorAll('#panel-murs .masonry-item, #panel-vitrines .masonry-item').forEach(item => {
+  // Lightbox pour les photos ET vidéos des panels Murs, Vitrines, Œuvres, Déco et Atelier
+  document.querySelectorAll('#panel-murs .masonry-item, #panel-vitrines .masonry-item, #panel-oeuvres .masonry-item, #panel-deco .masonry-item, #panel-atelier .masonry-item').forEach(item => {
     const img = item.querySelector('img');
     const vid = item.querySelector('video');
     if (!img && !vid) return;
