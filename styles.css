@@ -1005,7 +1005,7 @@
   }
 
   .contact-info-line {
-    font-size: 0.8rem;
+    font-size: 1.05rem;
     color: var(--mid);
     letter-spacing: 0.1em;
     line-height: 2;
@@ -1020,6 +1020,28 @@
 
   .contact-info-line a:hover {
     color: var(--gold);
+    border-color: var(--gold);
+  }
+
+  .contact-info-line a.contact-instagram {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--black);
+    border-bottom: none;
+    transition: color 0.3s;
+  }
+
+  .contact-info-line a.contact-instagram span {
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    transition: border-color 0.3s;
+  }
+
+  .contact-info-line a.contact-instagram:hover {
+    color: var(--gold);
+  }
+
+  .contact-info-line a.contact-instagram:hover span {
     border-color: var(--gold);
   }
 
