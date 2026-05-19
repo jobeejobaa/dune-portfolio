@@ -1250,7 +1250,8 @@
     }
     .about, .contact { grid-template-columns: 1fr; }
     .about-text { padding: 5rem 2rem; }
-    .about-visual { min-height: 60vh; }
+    .about-visual { min-height: auto; aspect-ratio: 3 / 4; }
+    .artist-photo { object-fit: contain; }
     .work { padding: 5rem 1.5rem; }
     .masonry { columns: 2; }
     .contact-form-area { padding: 5rem 2rem; }
