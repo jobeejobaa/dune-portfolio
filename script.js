@@ -212,6 +212,31 @@
     h3.addEventListener('keydown', e => {
       if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
     });
+
+    // Survol d'un autre titre → on referme la section actuellement ouverte
+    // (panel Vitrines : une seule galerie "voir plus" visible à la fois).
+    h3.addEventListener('mouseenter', () => {
+      document.querySelectorAll('#panel-vitrines .vitrine-section.is-open').forEach(open => {
+        if (open !== section) open.classList.remove('is-open');
+      });
+    });
+  });
+
+  // ---------- Cover au survol du titre (panel Vitrines) ----------
+  // Survol du h3 → aperçu du 1er média (image/vidéo) de la galerie.
+  // Le clic (accordion ci-dessus) ouvre la galerie complète.
+  document.querySelectorAll('#panel-vitrines .vitrine-section').forEach(section => {
+    const h3 = section.querySelector('.masonry-section-title');
+    const firstMedia = section.querySelector('.masonry-item img, .masonry-item video');
+    if (!h3 || !firstMedia) return;
+
+    const cover = document.createElement('div');
+    cover.className = 'section-cover';
+    const clone = firstMedia.cloneNode(true);
+    clone.removeAttribute('style');
+    cover.appendChild(clone);
+    cover.addEventListener('click', () => h3.click());
+    h3.insertAdjacentElement('afterend', cover);
   });
 
   // ---------- Auto-hide des sections vides ----------

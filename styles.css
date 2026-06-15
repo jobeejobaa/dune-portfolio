@@ -1295,3 +1295,51 @@
   .vitrine-section.is-open .masonry {
     display: block;
   }
+
+  /* ===== Cover au survol du titre (panel Vitrines) =====
+     Survol du h3 → aperçu du 1er média de la galerie.
+     Clic → ouvre la galerie complète (accordion ci-dessus). */
+  #panel-vitrines .section-cover {
+    position: relative;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    opacity: 0;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+  #panel-vitrines .section-cover img,
+  #panel-vitrines .section-cover video {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    display: block;
+  }
+  #panel-vitrines .section-cover::after {
+    content: '+ voir plus ▾';
+    position: absolute;
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    background: rgba(10, 10, 10, 0.55);
+    backdrop-filter: blur(6px);
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  #panel-vitrines .vitrine-section:not(.is-open) .masonry-section-title:hover ~ .section-cover,
+  #panel-vitrines .vitrine-section:not(.is-open) .section-cover:hover {
+    max-height: 320px;
+    opacity: 1;
+  }
+  #panel-vitrines .vitrine-section.is-open .section-cover {
+    display: none;
+  }
+  @media (max-width: 768px) {
+    #panel-vitrines .section-cover { display: none; }
+  }
