@@ -125,77 +125,6 @@
   </div>
 </div>
 
-<!-- ABOUT -->
-<section class="about" id="about" data-section="1">
-  <div class="about-text">
-    <div class="section-label reveal">Biographie</div>
-    <h2 class="about-heading reveal">
-      L'art urbain<br>
-      au service du<br>
-      <em>raffinement</em>
-    </h2>
-    <p class="about-body reveal">
-      Dune Carle Cros, 30 ans, est une artiste peintre engagée, passionnée par les arts urbains, le graffiti et l'expression contemporaine. Après une prépa artistique à la renommée Gerrit Rietveld Académie d'Amsterdam, elle a poursuivi des études en architecture d'intérieur, scénographie et direction artistique. Depuis ses 15 ans, âge où elle a saisi ses premières bombes de peinture, elle n'a jamais cessé de créer.
-    </p>
-    <p class="about-body reveal" style="margin-top: -1rem;">
-      Aujourd'hui indépendante, elle s'épanouit dans la conception et la réalisation de projets d'envergure — des fresques monumentales aux vitrines de prestige de la Place Vendôme, Monaco, Londres et d'autres grandes métropoles. Son identité artistique se nourrit également d'un engagement collectif fort : elle est membre actif de Who That Girl, un collectif de femmes, ainsi que de Black Line, un collectif engagé.
-    </p>
-    <p class="about-body reveal" style="margin-top: -1rem;">
-      Parallèlement à sa création, elle transmet ses techniques et sa passion à travers des workshops et des ateliers. Toujours en mouvement, Dune aspire aujourd'hui à porter son art encore plus loin, avec l'ambition de peindre des murs toujours plus grands partout autour du globe.
-    </p>
-    <div class="about-stats reveal">
-      <div>
-        <div class="stat-number">Partout en Europe</div>
-        <div class="stat-label">Paris Londres Monaco Nice Lille Nantes Montpellier Lecce et autres</div>
-      </div>
-      <div class="stats-right">
-        <div>
-          <div class="stat-number">15+</div>
-          <div class="stat-label">Années d'expérience</div>
-        </div>
-        <div>
-          <div class="stat-number">100+</div>
-          <div class="stat-label">Projets réalisés</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="about-visual">
-    <!-- Photo de l'artiste (placée dans portfolio/artiste.jpg). Si absente, le placeholder ci-dessous reste visible en fallback. -->
-    <img src="portfolio/artiste.jpg"
-         alt="Dune Carle Cros, artiste muraliste"
-         class="artist-photo"
-         onerror="this.style.display='none'; this.nextElementSibling.style.display='none'; this.nextElementSibling.nextElementSibling.style.display='none';" />
-    <div class="artist-photo-overlay"></div>
-    <div class="artist-photo-caption">Dune Carle Cros</div>
-
-    <!-- Placeholder "Photo en attente" (fallback élégant tant que la vraie photo n'est pas dispo) -->
-    <div class="photo-placeholder">
-      <svg class="photo-placeholder-frame" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
-        <defs>
-          <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
-            <stop offset="0%" stop-color="#2a2a2a"/>
-            <stop offset="100%" stop-color="#0f0f0f"/>
-          </radialGradient>
-        </defs>
-        <rect width="700" height="900" fill="url(#bgGrad)"/>
-        <!-- Cadre doré aux 4 coins -->
-        <path d="M 30 30 L 30 90 M 30 30 L 90 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-        <path d="M 670 30 L 670 90 M 670 30 L 610 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-        <path d="M 30 870 L 30 810 M 30 870 L 90 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-        <path d="M 670 870 L 670 810 M 670 870 L 610 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
-      </svg>
-      <div class="photo-placeholder-content">
-        <div class="photo-placeholder-mark">✦</div>
-        <div class="photo-placeholder-title">Photo en attente</div>
-        <div class="photo-placeholder-sub">Dune Carle Cros</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- WORK SECTION -->
 <section class="work" id="work" data-section="2">
   <div class="work-header">
@@ -212,15 +141,300 @@
 
   <!-- Tabs -->
   <div class="work-tabs reveal">
-  <button class="tab-btn active" onclick="switchTab(this, 'murs')">Murs & Fresques</button>
-  <button class="tab-btn" onclick="switchTab(this, 'vitrines')">Vitrines</button>
+  <button class="tab-btn active" onclick="switchTab(this, 'vitrines')">Vitrines</button>
+  <button class="tab-btn" onclick="switchTab(this, 'murs')">Murs & Fresques</button>
   <button class="tab-btn" onclick="switchTab(this, 'oeuvres')">Œuvres</button>
   <button class="tab-btn" onclick="switchTab(this, 'deco')">Deco & Custom</button>
   <button class="tab-btn" onclick="switchTab(this, 'expositions')">Expositions & Festival</button>
   <button class="tab-btn" onclick="switchTab(this, 'atelier')">Atelier & Workshop</button>
 </div>
+  <!-- Vitrines panel : devantures de boutiques, peintures sur vitre -->
+  <div class="grid-panel active" id="panel-vitrines">
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Grand Seiko — Place Vendôme · 2022</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <video src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/WhatsApp%20Video%202026-05-06%20at%2013.23.37.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <video src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/WhatsApp%20Video%202026-05-06%20at%2013.23.38.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <video src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/WhatsApp%20Video%202026-05-06%20at%2013.23.39.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/grand_seiko1.jpeg" alt="Grand Seiko — Place Vendôme · 2022" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/grand_seiko2.jpeg" alt="Grand Seiko — Place Vendôme · 2022" style="width:100%">
+        </div>
+        <div class="masonry-item reveal">
+          <img src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/grand_seiko3.jpeg" alt="Grand Seiko — Place Vendôme · 2022" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Grand Seiko · 2023</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO2.jpeg" alt="Grand Seiko · 2023" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO3.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO4.jpeg" alt="Grand Seiko · 2023" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO5.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal">
+          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO6.jpeg" alt="Grand Seiko · 2023" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO7.jpeg" alt="Grand Seiko · 2023" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO8.jpeg" alt="Grand Seiko · 2023" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO9.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Grand Seiko · 2024</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko1.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <video src="portfolio/GRAND%20SEIKO%202024/grand_seiko10.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko11.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko12.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko13.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko14.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko2.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko3.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko4.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko5.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal">
+          <video src="portfolio/GRAND%20SEIKO%202024/grand_seiko6.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko8.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko9.jpeg" alt="Grand Seiko · 2024" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Kenzo</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <video src="portfolio/KENZO/WhatsApp%20Video%202026-05-06%20at%2013.24.38.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/KENZO/kenzo1.jpeg" alt="Kenzo" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Guy Degrenne · Lille</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne1.jpg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne2.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne3.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne4.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne5.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne6.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne7.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Casa Barbara · Nice</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <video src="portfolio/CASA%20BARBARA%20NICE/casa_barbara1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara10.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara2.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara3.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara4.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara5.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara6.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara7.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara8.jpeg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara9.jpg" alt="Casa Barbara · Nice" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Maison Lepage · Lille</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <img src="portfolio/MAISON%20LEPAGE%20LILLE/maison_lepage1.jpeg" alt="Maison Lepage · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/MAISON%20LEPAGE%20LILLE/maison_lepage2.jpeg" alt="Maison Lepage · Lille" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <video src="portfolio/MAISON%20LEPAGE%20LILLE/maison_lepage3.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Franck Provost</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <img src="portfolio/FRANCK%20PROVOST/WhatsApp%20Image%202026-05-06%20at%2013.40.11.jpeg" alt="Franck Provost" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/FRANCK%20PROVOST/franck_provost1.jpeg" alt="Franck Provost" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <video src="portfolio/FRANCK%20PROVOST/franck_provost2.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <video src="portfolio/FRANCK%20PROVOST/franck_provost3.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Tasaki · Londres</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <video src="portfolio/TASAKI%20LONDRES%20/tasaki1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki2.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki3.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki4.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki5.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki6.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki7.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki8.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/TASAKI%20LONDRES%20/tasaki9.jpeg" alt="Tasaki · Londres" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Tasaki · Monaco</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <video src="portfolio/TASAKI%20MONACO/tasaki1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/TASAKI%20MONACO/tasaki2.jpeg" alt="Tasaki · Monaco" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/TASAKI%20MONACO/tasaki3.jpeg" alt="Tasaki · Monaco" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <img src="portfolio/TASAKI%20MONACO/tasaki4.jpeg" alt="Tasaki · Monaco" style="width:100%">
+        </div>
+      </div>
+    </section>
+
+    <section class="vitrine-section">
+      <h3 class="masonry-section-title masonry-section-title--sticky">Maison Prieur · Nantes</h3>
+      <div class="masonry">
+        <div class="masonry-item reveal">
+          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur2.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.05s">
+          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur3.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.1s">
+          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur4.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.15s">
+          <video src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur5.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
+        </div>
+        <div class="masonry-item reveal" style="transition-delay:0.2s">
+          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/u%CC%80aison_prieur1.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
+        </div>
+      </div>
+    </section>
+  </div>
+
   <!-- Murs & Fresques panel : fresques murales / extérieur (Outdoor) -->
-  <div class="grid-panel active" id="panel-murs">
+  <div class="grid-panel" id="panel-murs">
     <section class="vitrine-section">
       <h3 class="masonry-section-title masonry-section-title--sticky">Outdoor</h3>
       <div class="masonry">
@@ -732,291 +946,6 @@
 
   </div>
 
-  <!-- Vitrines panel : devantures de boutiques, peintures sur vitre -->
-  <div class="grid-panel" id="panel-vitrines">
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Grand Seiko — Place Vendôme · 2022</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <video src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/WhatsApp%20Video%202026-05-06%20at%2013.23.37.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <video src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/WhatsApp%20Video%202026-05-06%20at%2013.23.38.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <video src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/WhatsApp%20Video%202026-05-06%20at%2013.23.39.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/grand_seiko1.jpeg" alt="Grand Seiko — Place Vendôme · 2022" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/grand_seiko2.jpeg" alt="Grand Seiko — Place Vendôme · 2022" style="width:100%">
-        </div>
-        <div class="masonry-item reveal">
-          <img src="portfolio/GRAND%20SEIKO%20PLACE%20VENDOME%202022/grand_seiko3.jpeg" alt="Grand Seiko — Place Vendôme · 2022" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Grand Seiko · 2023</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO2.jpeg" alt="Grand Seiko · 2023" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO3.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO4.jpeg" alt="Grand Seiko · 2023" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO5.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal">
-          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO6.jpeg" alt="Grand Seiko · 2023" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO7.jpeg" alt="Grand Seiko · 2023" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO8.jpeg" alt="Grand Seiko · 2023" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <video src="portfolio/GRAND%20SEIKO%202023/GRAND_SEIKO9.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Grand Seiko · 2024</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko1.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <video src="portfolio/GRAND%20SEIKO%202024/grand_seiko10.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko11.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko12.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko13.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko14.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko2.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko3.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko4.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko5.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal">
-          <video src="portfolio/GRAND%20SEIKO%202024/grand_seiko6.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko8.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/GRAND%20SEIKO%202024/grand_seiko9.jpeg" alt="Grand Seiko · 2024" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Kenzo</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <video src="portfolio/KENZO/WhatsApp%20Video%202026-05-06%20at%2013.24.38.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/KENZO/kenzo1.jpeg" alt="Kenzo" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Guy Degrenne · Lille</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne1.jpg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne2.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne3.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne4.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne5.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne6.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/GUY%20DEGRENNE%20LILLE/guy_degrenne7.jpeg" alt="Guy Degrenne · Lille" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Casa Barbara · Nice</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <video src="portfolio/CASA%20BARBARA%20NICE/casa_barbara1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara10.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara2.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara3.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara4.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara5.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara6.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara7.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara8.jpeg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/CASA%20BARBARA%20NICE/casa_barbara9.jpg" alt="Casa Barbara · Nice" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Maison Lepage · Lille</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <img src="portfolio/MAISON%20LEPAGE%20LILLE/maison_lepage1.jpeg" alt="Maison Lepage · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/MAISON%20LEPAGE%20LILLE/maison_lepage2.jpeg" alt="Maison Lepage · Lille" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <video src="portfolio/MAISON%20LEPAGE%20LILLE/maison_lepage3.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Franck Provost</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <img src="portfolio/FRANCK%20PROVOST/WhatsApp%20Image%202026-05-06%20at%2013.40.11.jpeg" alt="Franck Provost" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/FRANCK%20PROVOST/franck_provost1.jpeg" alt="Franck Provost" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <video src="portfolio/FRANCK%20PROVOST/franck_provost2.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <video src="portfolio/FRANCK%20PROVOST/franck_provost3.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Tasaki · Londres</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <video src="portfolio/TASAKI%20LONDRES%20/tasaki1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki2.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki3.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki4.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki5.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki6.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki7.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki8.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/TASAKI%20LONDRES%20/tasaki9.jpeg" alt="Tasaki · Londres" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Tasaki · Monaco</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <video src="portfolio/TASAKI%20MONACO/tasaki1.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/TASAKI%20MONACO/tasaki2.jpeg" alt="Tasaki · Monaco" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/TASAKI%20MONACO/tasaki3.jpeg" alt="Tasaki · Monaco" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <img src="portfolio/TASAKI%20MONACO/tasaki4.jpeg" alt="Tasaki · Monaco" style="width:100%">
-        </div>
-      </div>
-    </section>
-
-    <section class="vitrine-section">
-      <h3 class="masonry-section-title masonry-section-title--sticky">Maison Prieur · Nantes</h3>
-      <div class="masonry">
-        <div class="masonry-item reveal">
-          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur2.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.05s">
-          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur3.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.1s">
-          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur4.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.15s">
-          <video src="portfolio/MAISON%20PRIEUR%20NANTES%20/maison_prieur5.mp4" autoplay muted loop playsinline preload="metadata" style="width:100%;display:block"></video>
-        </div>
-        <div class="masonry-item reveal" style="transition-delay:0.2s">
-          <img src="portfolio/MAISON%20PRIEUR%20NANTES%20/u%CC%80aison_prieur1.jpeg" alt="Maison Prieur · Nantes" style="width:100%">
-        </div>
-      </div>
-    </section>
-  </div>
-
   <!-- Œuvres panel : tableaux, toiles, œuvres autonomes -->
   <div class="grid-panel" id="panel-oeuvres">
 
@@ -1192,6 +1121,78 @@
 
   </div>
 
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about" data-section="1">
+  <div class="about-text">
+    <div class="section-label reveal">Biographie</div>
+    <h2 class="about-heading reveal">
+      L'art urbain<br>
+      au service du<br>
+      <em>raffinement</em>
+    </h2>
+    <p class="about-body reveal">
+      Dune Carle Cros, 30 ans, est une artiste peintre engagée, passionnée par les arts urbains, le graffiti et l'expression contemporaine. Après une prépa artistique à la renommée Gerrit Rietveld Académie d'Amsterdam, elle a poursuivi des études en architecture d'intérieur, scénographie et direction artistique. Depuis ses 15 ans, âge où elle a saisi ses premières bombes de peinture, elle n'a jamais cessé de créer.
+    </p>
+    <p class="about-body reveal" style="margin-top: -1rem;">
+      Aujourd'hui indépendante, elle s'épanouit dans la conception et la réalisation de projets d'envergure — des fresques monumentales aux vitrines de prestige de la Place Vendôme, Monaco, Londres et d'autres grandes métropoles. Son identité artistique se nourrit également d'un engagement collectif fort : elle est membre actif de Who That Girl, un collectif de femmes, ainsi que de Black Line, un collectif engagé.
+    </p>
+    <p class="about-body reveal" style="margin-top: -1rem;">
+      Parallèlement à sa création, elle transmet ses techniques et sa passion à travers des workshops et des ateliers. Toujours en mouvement, Dune aspire aujourd'hui à porter son art encore plus loin, avec l'ambition de peindre des murs toujours plus grands partout autour du globe.
+    </p>
+    <div class="about-stats reveal">
+      <div>
+        <div class="stat-number">Partout en Europe</div>
+        <div class="stat-label">Paris Londres Monaco Nice Lille Nantes Montpellier Lecce et autres</div>
+      </div>
+      <div class="stats-right">
+        <div>
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+        <div>
+          <div class="stat-number">100+</div>
+          <div class="stat-label">Projets réalisés</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="about-visual">
+    <!-- Photo de l'artiste (placée dans portfolio/artiste.jpg). Si absente, le placeholder ci-dessous reste visible en fallback. -->
+    <img src="portfolio/artiste.jpg"
+         alt="Dune Carle Cros, artiste muraliste"
+         class="artist-photo"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='none'; this.nextElementSibling.nextElementSibling.style.display='none';" />
+    <div class="artist-photo-overlay"></div>
+    <div class="artist-photo-caption">Dune Carle Cros</div>
+
+    <!-- Placeholder "Photo en attente" (fallback élégant tant que la vraie photo n'est pas dispo) -->
+    <div class="photo-placeholder">
+      <svg class="photo-placeholder-frame" viewBox="0 0 700 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="bgGrad" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#2a2a2a"/>
+            <stop offset="100%" stop-color="#0f0f0f"/>
+          </radialGradient>
+        </defs>
+        <rect width="700" height="900" fill="url(#bgGrad)"/>
+        <!-- Cadre doré aux 4 coins -->
+        <path d="M 30 30 L 30 90 M 30 30 L 90 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M 670 30 L 670 90 M 670 30 L 610 30" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M 30 870 L 30 810 M 30 870 L 90 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+        <path d="M 670 870 L 670 810 M 670 870 L 610 870" stroke="#c9a96e" stroke-width="0.8" opacity="0.4" fill="none"/>
+      </svg>
+      <div class="photo-placeholder-content">
+        <div class="photo-placeholder-mark">✦</div>
+        <div class="photo-placeholder-title">Photo en attente</div>
+        <div class="photo-placeholder-sub">Dune Carle Cros</div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- CLIENTS -->
