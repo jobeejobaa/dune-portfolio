@@ -1259,7 +1259,17 @@
     nav { padding: 1.5rem 2rem; }
     .nav-burger { display: flex; }
     .hero-tag { top: 85px; font-size: 0.55rem; letter-spacing: 0.4em; }
-    .hero-video { top: 115px; height: calc(100% - 115px); }
+    .hero-video {
+      top: 115px;
+      height: calc(100% - 115px);
+      /* La vidéo source contient des bandes noires (letterbox) haut/bas.
+         Sur desktop elles se fondent dans le fond noir, mais en format
+         portrait mobile le "cover" ne rogne que la largeur : les bandes
+         restent visibles au milieu de l'écran, derrière le titre.
+         On zoome légèrement pour les faire sortir du cadre. */
+      transform: scale(1.35);
+      transform-origin: center center;
+    }
     .hero-content { margin-top: 115px; }
     body.nav-open nav { mix-blend-mode: normal; background: #0a0a0a; }
     .nav-links {
