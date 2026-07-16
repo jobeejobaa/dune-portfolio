@@ -687,6 +687,26 @@
   #panel-expositions .masonry-item { cursor: pointer; }
   #panel-deco .custom-item { cursor: pointer; }
 
+  /* Murs & Fresques sur mobile/tactile : pas de vrai hover, donc le nom
+     du projet reste visible en permanence sous forme de petit badge,
+     sans assombrir toute l'image comme sur desktop. */
+  @media (hover: none) {
+    #panel-murs .masonry-item::before { opacity: 0; }
+    #panel-murs .masonry-item img { filter: none; transform: none; }
+    #panel-murs .item-overlay {
+      opacity: 1;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 0.5rem 0.6rem;
+      background: linear-gradient(to top, rgba(10,10,10,0.75) 0%, transparent 65%);
+    }
+    #panel-murs .item-overlay-title {
+      font-size: 0.75rem;
+      margin-bottom: 0;
+      letter-spacing: 0.05em;
+    }
+  }
+
   /* LIGHTBOX (Custom panel) — image plein écran sans texte */
   .lightbox {
     position: fixed;
