@@ -591,6 +591,23 @@
     column-gap: 1.5rem;
   }
 
+  /* Groupe d'images d'un même projet (Murs & Fresques) : reste soudé,
+     ne se fait pas éclater entre les colonnes du masonry. */
+  .masonry-project {
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+  }
+
+  .masonry-project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .masonry-project-grid .masonry-item {
+    margin-bottom: 0;
+  }
+
   .masonry-item {
     break-inside: avoid;
     margin-bottom: 1.5rem;
